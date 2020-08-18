@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-sm8 col-sm-offset-2">
+        <h2>Ajouter un jeu</h2>
+        <form [formGroup]="gameForm" (ngSubmit)="onSaveGame()">
+            <div class="from-group">
+                <label for="title">Nom du jeu</label>
+                <input type="text" class="form-control" id="title" formControlName="title">
+            </div>
+            <div class="from-group">
+                <label for="platform">Plateforme</label>
+                <input type="text" class="form-control" id="platform" formControlName="platform">
+            </div>
+            <div class="from-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" formControlName="description">
+            </div>
+            <div class="from-group">
+                <label for="parution">Date de parution</label>
+                <input type="text" class="form-control" id="parution" formControlName="parution">
+            </div>
+            <div class="form-group">
+                <h4>Ajouter la couverture du jeu</h4>
+                <input type="file" (change)="detectFiles($event)" class="form-control"accept="image/*" >
+                <p class="text-success" *ngIf="fileUploaded">couverture chargée !</p>
+            </div>
+            
+            <button class="btn btn-success" [disabled]="gameForm.invalid || fileIsUploading" type="submit">Enregistrer</button>
+        </form>
+    </div>
+</div>

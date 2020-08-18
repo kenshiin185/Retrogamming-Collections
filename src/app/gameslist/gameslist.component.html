@@ -1,0 +1,31 @@
+
+   
+    <button class="btn btn-success add" (click)="onNewGame()">Nouveau jeu</button>
+
+<div class="wrap">
+    <div class="col-xs-12 card">
+
+        <div class="list-group carte" *ngFor="let game of games ; let i=index"
+        (click) ="onViewGame(i)">
+
+           
+            <div class="desc">
+                <h3 class="list-group-item-text">{{game.title}}</h3>
+                <h6 class="list-group-item-text">{{game.platform}}</h6>
+                <span>
+                   
+                </span>
+
+
+            </div>
+
+            <button routerLink="games/view/:id" class="btn btn-success">
+                <span class="glyphicon">Voir</span>
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>

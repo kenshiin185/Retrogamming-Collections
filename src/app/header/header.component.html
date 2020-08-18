@@ -1,0 +1,25 @@
+
+<nav class="header">
+    <img src="assets/dkong.png" alt="">
+    <img src="assets/titre.png" class="titre" alt="">
+    
+    <div class="container-fluid">
+        
+        <ul class="nav navbar-nav">
+            <li routerLinkActive="Active" *ngIf="isAuth">
+              <button routerLink="games">Jeux</button>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li routerLinkActive="Active" *ngIf="!isAuth">
+                <button routerLink="auth/signup">Créer un compte</button>
+            </li>
+            <li routerLinkActive="Active" *ngIf="!isAuth">
+                <button routerLink="auth/signin">Connexion</button>
+            </li>
+            <li>
+                <button (click)="onSignOut()" *ngIf="isAuth" style="cursor: pointer">Déconnexion</button>
+            </li>
+        </ul>
+    </div>
+</nav>

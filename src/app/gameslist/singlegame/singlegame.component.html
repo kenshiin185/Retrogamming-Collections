@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-xs-12">
+        <img [src]="game.cover" alt="">
+        <h1>{{ game.title }}</h1>
+        <h3>{{ game.platform }}</h3>
+        <h6>{{game.parution}}</h6>
+        <p>{{game.description}}</p>
+        
+        <button class="btn btn-success" (click)="onBack()">Retour</button>
+    </div>
+</div>
